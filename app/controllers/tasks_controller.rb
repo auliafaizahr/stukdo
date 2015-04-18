@@ -24,7 +24,7 @@
   end
 
   def create
-    @task = current_user.tasks.new(params[:task])
+    @task = current_user.tasks.new(task_params)
     @task.save
     respond_with(@task)
   end
