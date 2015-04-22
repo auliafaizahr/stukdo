@@ -40,8 +40,10 @@ test:
 # production:
 # url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: stukdo_production
-  username: stukdo
-  password: <%= ENV['STUKDO_DATABASE_PASSWORD'] %>
+production: &default
+  adapter: postgresql
+  database: todoism 
+  encoding: utf8
+  min_messages: Warning
+  pool: 5
+  timeout: 5000
